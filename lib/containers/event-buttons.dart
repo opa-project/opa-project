@@ -9,12 +9,11 @@ class EventButtons extends StatelessWidget {
           backgroundColor: Colors.white,
           body: SafeArea(
             child: Center(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
+              child: Flex(
+                direction: Axis.horizontal,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  const SizedBox(height: 200),
                   Container(
-                    margin: const EdgeInsets.only(right: 10.0),
                     child: RaisedButton(
                       onPressed: () {},
                       textColor: Colors.white,
@@ -23,16 +22,27 @@ class EventButtons extends StatelessWidget {
                         decoration: const BoxDecoration(
                           color: Colors.indigo,
                         ),
-                        padding: const EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
-                        child: const Text(
-                          'Chat',
-                          style: TextStyle(fontSize:18)
+                        padding: const EdgeInsets.all(10),
+                        child: Container(
+                          height: 50,
+                          width: 70,
+                          child: Flex(
+                            direction: Axis.vertical,
+                              children: <Widget>[
+                                const Icon(
+                                  Icons.chat,
+                                ),
+                                const Text(
+                                    'Chat',
+                                    style: TextStyle(fontSize:18)
+                                ),
+                              ],
+                          ),
                         ),
                       ),
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(right: 10.0),
                     child: RaisedButton(
                       onPressed: () {},
                       textColor: Colors.white,
@@ -41,17 +51,27 @@ class EventButtons extends StatelessWidget {
                         decoration: const BoxDecoration(
                           color: Colors.indigo,
                         ),
-                        padding: const EdgeInsets.only(left: 0, right: 0, top: 20, bottom: 20),
-
-                        child: const Text(
-                          'Expense',
-                          style: TextStyle(fontSize: 18),
+                        padding: const EdgeInsets.all(10),
+                        child: Container(
+                          height: 50,
+                          width: 70,
+                          child: Flex(
+                            direction: Axis.vertical,
+                            children: <Widget>[
+                              const Icon(
+                                Icons.event_note,
+                              ),
+                              const Text(
+                                  'Events',
+                                  style: TextStyle(fontSize:18)
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(right: 10.0),
                     child: RaisedButton(
                       onPressed: () {},
                       textColor: Colors.white,
@@ -60,16 +80,27 @@ class EventButtons extends StatelessWidget {
                         decoration: const BoxDecoration(
                           color: Colors.indigo,
                         ),
-                        padding: const EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
-                        child: const Text(
-                          'Events',
-                          style: TextStyle(fontSize: 18),
+                        padding: const EdgeInsets.all(10),
+                        child: Container(
+                          height: 50,
+                          width: 70,
+                          child: Flex(
+                            direction: Axis.vertical,
+                            children: <Widget>[
+                              const Icon(
+                                Icons.attach_money,
+                              ),
+                              const Text(
+                                  'Expense',
+                                  style: TextStyle(fontSize:18)
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(right: 10.0),
                     child: RaisedButton(
                       onPressed: () {},
                       textColor: Colors.white,
@@ -78,10 +109,22 @@ class EventButtons extends StatelessWidget {
                         decoration: const BoxDecoration(
                           color: Colors.indigo,
                         ),
-                        padding: const EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
-                        child: const Text(
-                          'Polls',
-                          style: TextStyle(fontSize: 18),
+                        padding: const EdgeInsets.all(10),
+                        child: Container(
+                          height: 50,
+                          width: 70,
+                          child: Flex(
+                            direction: Axis.vertical,
+                            children: <Widget>[
+                              const Icon(
+                                Icons.poll,
+                              ),
+                              const Text(
+                                  'Polls',
+                                  style: TextStyle(fontSize:18)
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:opa_project/containers/dashboard.dart';
 import 'package:opa_project/containers/messages.dart';
 import 'package:opa_project/containers/expenses.dart';
@@ -29,7 +30,9 @@ class _NavigationState extends State<Navigation> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+
       body: pages[_currentIndex],
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         items:[
