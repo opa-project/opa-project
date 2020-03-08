@@ -1,19 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Dashboard extends StatelessWidget {
+class CreateEvent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      title: 'Dashboard',
+      title: 'Create Event',
       home: Scaffold(
         appBar: new AppBar(
-          title: new Text('Dashboard')
+          title: new Text('Create Event')
         ),
       )
     );
   }
 }
-
-
