@@ -1,5 +1,10 @@
+import 'dart:ui';
+
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'containers/navigation.dart';
+import 'containers/dashboard.dart';
+import 'containers/event-buttons.dart';
 
 void main() => runApp(MyApp());
 
