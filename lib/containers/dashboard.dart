@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:opa_project/containers/create-event.dart';
 import 'package:opa_project/containers/event-buttons.dart';
+
+import '../create-event-button.dart';
 
 class Dashboard extends StatelessWidget {
   @override
@@ -13,7 +16,7 @@ class Dashboard extends StatelessWidget {
           title: new Text('Dashboard')
         ),
         body: Container(
-          child: EventButtons()
+          child: CreateEventButton()
         )
       )
     );
