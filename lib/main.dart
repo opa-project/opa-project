@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:opa_project/create-event-button.dart';
+import 'containers/contact-list.dart';
 import 'containers/navigation.dart';
 import 'containers/dashboard.dart';
 import 'containers/event-buttons.dart';
@@ -69,9 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Container(
-                child: EventButtons()
+                child: null
         ),
       ),
+//      floatingActionButton: CreateEventButton(),
       bottomNavigationBar: Navigation()
         
     );
