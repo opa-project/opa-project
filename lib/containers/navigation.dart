@@ -43,20 +43,20 @@ class _NavigationState extends State<Navigation> {
           ),
 
           BottomNavigationBarItem (
-          icon: Icon(Icons.chat),
-          title: Text('Messages'),
+          icon: Icon(Icons.search),
+          title: Text('Search'),
           backgroundColor: Colors.blue
           ),
 
           BottomNavigationBarItem (
-          icon: Icon(Icons.attach_money),
-          title: Text('Expenses'),
+          icon: Icon(Icons.notifications),
+          title: Text('Notifcations'),
           backgroundColor: Colors.blue
           ),
 
           BottomNavigationBarItem (
           icon: Icon(Icons.add),
-          title: Text('Create Event'),
+          title: Text('Messages'),
           backgroundColor: Colors.blue
           ),
         ],
