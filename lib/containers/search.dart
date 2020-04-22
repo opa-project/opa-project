@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CreateEvent extends StatelessWidget {
+class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      title: 'Create Event',
+      title: 'Search',
       home: Scaffold(
         appBar: new AppBar(
-          title: new Text('Create Event')
+          title: new Text('Search')
         ),
       )
     );
