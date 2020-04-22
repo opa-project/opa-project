@@ -31,6 +31,14 @@ class _ContactListPageState extends State<ContactListPage> {
     });
   }
 
+  bool _isChecked = false;
+
+  void onChanged(bool value){
+    setState(() {
+      _isChecked = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,6 +67,12 @@ class _ContactListPageState extends State<ContactListPage> {
                       ? c.displayName?.substring(0, 2)
                       : "")),
               title: Text(c.displayName ?? ""),
+              trailing: Checkbox(
+            value: _isChecked,
+            onChanged: (bool newValue) {
+              onChanged(newValue);
+            },
+          ), 
             );
           },
         )
