@@ -18,6 +18,8 @@ class ContactListPage extends StatefulWidget {
 class _ContactListPageState extends State<ContactListPage> {
   Iterable<Contact> _contacts;
 
+  bool isSearching = false;
+
   @override
   initState() {
     super.initState();
@@ -42,7 +44,34 @@ class _ContactListPageState extends State<ContactListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Invite your friends!')),
+      appBar: AppBar(
+        title: !isSearching 
+        ? Text('Invite your friends!') 
+        : TextField(
+          style: TextStyle(color: Colors.white), 
+          decoration: InputDecoration(
+            icon: Icon(Icons.search, color: Colors.white,),
+            hintText: "Search Contacts",
+            hintStyle: TextStyle(color: Colors.white)
+            ),
+          ),
+        actions:<Widget>[
+          isSearching ?
+                    IconButton(
+            icon: Icon(Icons.cancel),
+            onPressed:() {
+              setState(() {
+                isSearching = false;
+              });
+            },) :
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed:() {
+              setState(() {
+                isSearching = true;
+              });
+            },)
+        ]),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.navigate_next),
           onPressed: () {
@@ -69,8 +98,8 @@ class _ContactListPageState extends State<ContactListPage> {
               title: Text(c.displayName ?? ""),
               trailing: Checkbox(
             value: _isChecked,
-            onChanged: (bool newValue) {
-              onChanged(newValue);
+            onChanged: (bool index) {
+              onChanged(index);
             },
           ), 
             );
