@@ -17,6 +17,7 @@ class ContactListPage extends StatefulWidget {
 
 class _ContactListPageState extends State<ContactListPage> {
   Iterable<Contact> _contacts;
+  Iterable<Contact> filteredContacts;
 
   bool isSearching = false;
 
@@ -29,7 +30,13 @@ class _ContactListPageState extends State<ContactListPage> {
   refreshContacts() async {
     var contacts = await ContactsService.getContacts();
     setState(() {
-      _contacts = contacts;
+      _contacts = filteredContacts = contacts;
+    });
+  }
+
+  void _filteredContacts(value) {
+    setState(() {
+    filteredContacts = _contacts.where((contact) => contact.displayName.toLowerCase().contains(value.toLowerCase()));
     });
   }
 
@@ -41,6 +48,7 @@ class _ContactListPageState extends State<ContactListPage> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +56,9 @@ class _ContactListPageState extends State<ContactListPage> {
         title: !isSearching 
         ? Text('Invite your friends!') 
         : TextField(
+          onChanged: (value) {
+            _filteredContacts(value);
+          },
           style: TextStyle(color: Colors.white), 
           decoration: InputDecoration(
             icon: Icon(Icons.search, color: Colors.white,),
@@ -62,6 +73,7 @@ class _ContactListPageState extends State<ContactListPage> {
             onPressed:() {
               setState(() {
                 isSearching = false;
+                filteredContacts = _contacts;
               });
             },) :
           IconButton(
@@ -78,11 +90,11 @@ class _ContactListPageState extends State<ContactListPage> {
             // add code to go to next page
           }),
       body: SafeArea(
-        child: _contacts != null
+        child: filteredContacts != null
             ? ListView.builder(
-          itemCount: _contacts?.length ?? 0,
+          itemCount: filteredContacts?.length ?? 0,
           itemBuilder: (BuildContext context, int index) {
-            Contact c = _contacts?.elementAt(index);
+            Contact c = filteredContacts?.elementAt(index);
             return ListTile(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
