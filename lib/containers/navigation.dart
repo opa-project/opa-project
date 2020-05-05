@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:opa_project/containers/dashboard.dart';
+import 'package:opa_project/containers/events.dart';
 import 'package:opa_project/containers/messages.dart';
 import 'package:opa_project/containers/search.dart';
 import 'package:opa_project/containers/notifications.dart';
@@ -22,7 +23,7 @@ class _NavigationState extends State<Navigation> {
       case 0: return Dashboard();
       case 1: return Search();
       case 2: return Notifications();
-      case 3: return Messages();
+      case 3: return Events();
 
         break;
         default:return Dashboard();
