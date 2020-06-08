@@ -36,7 +36,9 @@ class _ContactListPageState extends State<ContactListPage> {
 
   void _filteredContacts(value) {
     setState(() {
-    filteredContacts = _contacts.where((contact) => contact.displayName.toLowerCase().contains(value.toLowerCase()));
+    filteredContacts =
+     _contacts.where((contact) => 
+     contact.displayName.toLowerCase().contains(value.toLowerCase()));
     });
   }
 
